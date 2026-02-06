@@ -13,7 +13,13 @@ public class G31Equilibrium {
             suffix[i] = suffix[i+1] + arr[i];
         }   
         for(int i=0;i<n;i++){
-            
+            int leftSum = (i==0)?0:prefix[i-1];
+            int rightSum = (i == n - 1)?0:suffix[i+1];
+            if(leftSum == rightSum){
+                System.out.println("Equi index: " + i);
+                return;
+            }
         }
+        System.out.println("No Equi index found");
     }
 }
